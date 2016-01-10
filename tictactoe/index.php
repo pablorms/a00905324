@@ -20,6 +20,7 @@ and open the template in the editor.
             $hoursworked = 10;
             $rate = 12;
             $total = $hoursworked * $rate;
+            echo '<br/>';
             echo 'You owe me '.$total;
         ?>
     </body>

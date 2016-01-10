@@ -20,7 +20,7 @@ and open the template in the editor.
             
             echo '<br/>';
             
-            $hoursworked=41;
+            $hoursworked=$_GET['hours'];
             $rate = 30;
             
             if ($hoursworked > 40) {

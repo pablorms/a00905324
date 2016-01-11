@@ -1,9 +1,12 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<!DOCTYPE html> 
+<?php
+    /* 
+    * Index page for tit-tac-toe game for ACIT 4850
+    * Developed by Pablo Ramos - CIT 4B - A00905324
+    * 2016-01-10 14:00 
+    */
+    require_once("game.php");
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -11,28 +14,12 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-            if (isset($_GET['board'])){
-                
-                $game = new Game($_GET['board']);
-
-                if ($game->winner('x')){
-                    echo 'You win. Lucky guesses!';
-                }
-                else if ($game->winner('o')){
-                    echo 'I win. Muahahahaha';
-                }
-                else {
-                    echo 'No winner yet, but you are losing.';
-                }
-            }
-            else
-            {
-                echo 'No game info available';
-            }
-                
+            // Acquire input
+            $board = isset($_GET['board'])? $_GET['board'] : null;
+            // Instantiate game
+            $game = new Game($board);
+            // Display game
+            $game->display();
         ?>
     </body>
 </html>
-<?php
- 
-?>
